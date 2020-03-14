@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<script language="JavaScript">
+	function showInput() {
+		document.getElementById('displayfname').innerHTML = document
+				.getElementById("fname").value;
+		document.getElementById('displaylname').innerHTML = document
+				.getElementById("lname").value;
+		document.getElementById('displaynkname').innerHTML = document
+				.getElementById("nkname").value;
+		document.getElementById('displayage').innerHTML = document
+				.getElementById("age").value;
+		
+		var totalCredit = parseInt(document.getElementById("creditA").value)+
+		parseInt(document.getElementById("creditB").value)+
+		parseInt(document.getElementById("creditC").value)+
+		parseInt(document.getElementById("creditD").value);
+		
+		
+		var totalGrade = 
+			(parseInt(document.getElementById("creditA").value)*
+				parseInt(document.getElementById("gradeA").value))
+				+ (parseInt(document.getElementById("creditB").value)*
+						parseInt(document.getElementById("gradeB").value))
+				+ (parseInt(document.getElementById("creditC").value)*
+						parseInt(document.getElementById("gradeC").value))
+				+ (parseInt(document.getElementById("creditD").value)*
+						parseInt(document.getElementById("gradeD").value))
+		
+		var GPA = totalGrade / totalCredit;		
+		document.getElementById('displayGPA').innerHTML = GPA;
+	}
+</script>
+
+</head>
+<body>
+
+	<form>
+		<label><b>First name</b></label> <input type="text" id="fname">
+		<label><b>Last name</b></label> <input type="text" id="lname"><br>
+		<label><b>Nick name</b></label> <input type="text" id="nkname"><br>
+		<label><b>Age</b></label> <input type="text" id="age">
+		<h4>Calculate Grade</h4>
+		<label><b>Credit &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;</b></label>
+		<label><b>Grade</b></label><br> 
+		<input type="number" id="creditA" placeholder="Subject A"> 
+		<input type="number" id="gradeA" placeholder="Subject A"><br>
+		<input type="number" id="creditB" placeholder="Subject B"> 
+		<input type="number" id="gradeB" placeholder="Subject B"><br>
+		<input type="number" id="creditC" placeholder="Subject C"> 
+		<input type="number" id="gradeC" placeholder="Subject C"><br>
+		<input type="number" id="creditD" placeholder="Subject D">
+		<input type="number" id="gradeD" placeholder="Subject D"><br>
+		
+	</form>
+
+	<br>
+	<input type="submit" onclick="showInput();">
+	<br>
+	<p>
+		<label>Name: </label><span id='displayfname'></span> <span id='displaylname'></span><br>
+		<label>Nick name: </label><span id='displaynkname'></span><br>
+		<label>Age: </label><span id='displayage'></span><br>
+		<label>GPA: </label><span id='displayGPA'></span>
+	</p>
+</body>
+</html>
